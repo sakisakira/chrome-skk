@@ -24,6 +24,11 @@ function createRomanInput(table) {
       return true;
     }
 
+    // ignoring Ctrl-J always
+    if (keyevent.ctrlKey && keyevent.key == 'j') {
+      return true;
+    }
+
     if (keyevent.key.length != 1 || keyevent.ctrlKey || keyevent.altKey) {
       return false;
     }
